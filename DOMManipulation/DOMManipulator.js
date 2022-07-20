@@ -1,18 +1,29 @@
 /*
 ✓ 	Select the section with an id of container without using querySelector.
+noQSelectContainer()
 ✓ 	Select the section with an id of container using querySelector.
+qSelectContainer() 
 ✓ 	Select all of the list items with a class of “second”. << this can be refined
+selectAllSecondClass() 
 ✓ 	Select a list item with a class of third, but only the list item inside of the ol tag.
+selectThirdInOrderedList()
 ✓ 	Give the section with an id of container the text “Hello!”.
+changeTextOfSectionContainer() 
 ✓ 	Add the class main to the div with a class of footer.
+addMainToDivFooter() 
 ✓ 	Remove the class main on the div with a class of footer.
+removeMainFromDivFooter() 
 ✓ 	Create a new li element.
+newListItemElement() 
 ✓ 	Give the li the text “four”.
+listItemAddText() 
 ✓ 	Append the li to the ul element.
+appendListItemToUnorderedList() 
 ✓ 	Loop over all of the lis inside the ol tag and give them a background color of “green”.
+changeOrderedListItemBGColor()
 ✓ 	Remove the div with a class of footer
+deleteDivFooter() 
 */
-
 var lineItem;
 
 function noQSelectContainer() 
@@ -35,17 +46,17 @@ function selectThirdInOrderedList()
 	return document.querySelector("ol").querySelector(".third");
 }
 
-function changeTextOfContainerSection() 
+function changeTextOfSectionContainer() 
 {
 	document.querySelector("section#container").innerHTML = "hello";
 }
 
-function addMainToFooter() 
+function addMainToDivFooter() 
 {
 	document.querySelector(".footer").setAttribute('class', "main footer");
 }
 
-function removeMainFromFooter() 
+function removeMainFromDivFooter() 
 {
 	document.querySelector("div.footer").setAttribute('class', "footer");
 }
@@ -55,7 +66,7 @@ function newListItemElement()
 	lineItem = document.createElement("li");
 }
 
-function listItemTextAdd() 
+function listItemAddText() 
 {
 	var text = document.createTextNode("four")
 	lineItem.appendChild(text);
@@ -66,32 +77,18 @@ function appendListItemToUnorderedList()
 	document.querySelector("ul").appendChild(lineItem);
 }
 
-function changeOrderedListItemBGColor() 
+function changeOrderedListItemBGColor()
 {
-	//forEach list item in ordered list
-	/*
-	for (let i = 0; i<document.querySelector("ol").querySelectorAll("li").entries(); i++) {
-		document.querySelector("ol").querySelectorAll("li").item(i).style.backgroundColor('green');
-	}
-	*/
-	document.body.style.backgroundColor = 'green';
-
-	var listItemList = document.querySelector("ol").querySelectorAll("li");
-
-	for (let i = 0; i<listItemList.entries; i++) {
-		listItemList.element(i).style.backgroundColor('green');
-	}
-
-	/*
 	document.querySelector("ol").querySelectorAll("li").forEach
 	(
-		function (listItem){
-			listItem.style.backgroundColor('green');
+		function(currentValue, currentIndex, listObj) 
+		{
+			currentValue.style.backgroundColor = "green";
 		}
 	);
-	*/
 }
 
-function divDelete() {
+function deleteDivFooter() 
+{
 	document.querySelector("div.footer").remove();
 }
