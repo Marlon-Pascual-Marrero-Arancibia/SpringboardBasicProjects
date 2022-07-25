@@ -1,4 +1,19 @@
-document.querySelector("#colors").addEventListener('click', function(e)
+document.querySelector("#White").addEventListener('click', function(e)
+{
+    document.body.style.backgroundColor = e.target.dataset.hex;
+})
+
+document.querySelector("#Brown").addEventListener('click', function(e)
+{
+    document.body.style.backgroundColor = e.target.dataset.hex;
+})
+
+document.querySelector("#Seafoam").addEventListener('click', function(e)
+{
+    document.body.style.backgroundColor = e.target.dataset.hex;
+})
+
+document.querySelector("#Black").addEventListener('click', function(e)
 {
     document.body.style.backgroundColor = e.target.dataset.hex;
 })
